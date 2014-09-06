@@ -42,6 +42,9 @@ public class DifficultySelector : MonoBehaviour {
 			activeLevel.SetActive(true);
 		}
 		countdown.enabled = false;
+
+		if(PlayerPrefs.GetInt("CTPInstGiv")==null)
+			PlayerPrefs.SetInt("CTPInstGiv", 0);
 	}
 	
 	// Update is called once per frame
@@ -51,16 +54,20 @@ public class DifficultySelector : MonoBehaviour {
 
 	IEnumerator StartCountDown(){
 		countdown.enabled = true;
-		countdown.text = "Take ALL 5 peaches";
-		yield return new WaitForSeconds(2.0f);
-		countdown.text = "30 seconds";
-		yield return new WaitForSeconds(2.0f);
-		countdown.text = "Do NOT get caught";
-		yield return new WaitForSeconds(2.0f);
-		countdown.text = "Run & Walljump";
-		for(int i = 0;i<3;i++){
+		countdown.text = "";
+		if(PlayerPrefs.GetInt("CTPInstGiv")==0){
+			countdown.text = "Take ALL 5 peaches";
+			yield return new WaitForSeconds(2.0f);
+			countdown.text = "30 seconds";
+			yield return new WaitForSeconds(2.0f);
+			countdown.text = "Do NOT get caught";
+			yield return new WaitForSeconds(2.0f);
+			countdown.text = "Run & Walljump";
+			PlayerPrefs.SetInt("CTPInstGiv", 1);
+		}
+		for(int i = 0;i<=3;i++){
 			yield return new WaitForSeconds(1.0f);
-			countdown.text = ""+(3-(i+1));
+			countdown.text = ""+(3-(i));
 		}
 		begin = true;
 	}
