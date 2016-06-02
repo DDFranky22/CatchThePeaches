@@ -59,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
 	
 	void onTriggerEnterEvent( Collider2D col )
 	{
-		if (col.gameObject.layer.Equals(2)) {
+		if (col.gameObject.layer.Equals(11)) {
 			WallJumpReady = true;
 			if(col.gameObject.transform.position.x>this.gameObject.transform.position.x){
 				WallPosition = 1;

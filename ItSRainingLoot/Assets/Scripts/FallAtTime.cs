@@ -7,7 +7,7 @@ public class FallAtTime : MonoBehaviour {
 	public float secondFromStar;
 	// Use this for initialization
 	void Start () {
-		body = rigidbody2D;
+		body = GetComponent<Rigidbody2D>();
 		StartCoroutine(StartFall());
 	}
 

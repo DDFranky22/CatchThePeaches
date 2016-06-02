@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class HaveThePeach : MonoBehaviour {
@@ -7,7 +8,7 @@ public class HaveThePeach : MonoBehaviour {
 	public GameObject Item;
 
 	public int Peaches;
-	public GUIText peachesIndicator;
+	public Text peachesIndicator;
 	// Use this for initialization
 	void Start () {
 	

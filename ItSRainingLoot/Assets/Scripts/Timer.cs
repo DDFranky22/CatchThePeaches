@@ -1,21 +1,25 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
-public class Timer : MonoBehaviour {
+public class Timer : MonoBehaviour 
+{
 	public float secondsRemaning;
 	private VictoryChecker scriptVictory;
-	public GUIText textOnScreen;
+	public Text textOnScreen;
 	public bool stop;
 	private DifficultySelector start;
 	private bool started;
 
 	// Use this for initialization
-	void Start () {
+	void Start () 
+	{
 		scriptVictory = GameObject.Find("CheckVictory").GetComponent<VictoryChecker>();
 		start = Camera.main.GetComponent<DifficultySelector>();
 	}
 
-	IEnumerator CountDown(){
+	IEnumerator CountDown()
+	{
 		textOnScreen.text = ""+secondsRemaning;
 		while(secondsRemaning>0&&!stop){
 			yield return new WaitForSeconds(1.0f);
@@ -28,7 +32,8 @@ public class Timer : MonoBehaviour {
 	}
 
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+	{
 		if(!started&&start.begin){
 			StartCoroutine(CountDown());
 			started = true;

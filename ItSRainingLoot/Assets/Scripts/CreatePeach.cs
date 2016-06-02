@@ -14,7 +14,7 @@ public class CreatePeach : MonoBehaviour {
 
 	// Use this for initialization
 	void CreatePeaches () {
-		Collider2D collider = collider2D;
+		Collider2D collider = GetComponent<Collider2D>();
 		for(int i = 0;i<NumberOfPeaches;i++){
 			GameObject peach = Instantiate(peachPrefab,new Vector3(Random.Range(this.transform.position.x-collider.bounds.size.x/2,this.transform.position.x+collider.bounds.size.x/2),this.transform.position.y-collider.bounds.size.y),Quaternion.identity) as GameObject;
 			FallAtTime script = peach.GetComponent<FallAtTime>();

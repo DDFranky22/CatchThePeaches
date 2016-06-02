@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class VictoryChecker : MonoBehaviour {
@@ -8,7 +9,7 @@ public class VictoryChecker : MonoBehaviour {
 	public bool Busted;
 	public HaveThePeach catched;
 	public CreatePeach created;
-	public GUIText textOnScreen;
+	public Text textOnScreen;
 	public bool endGame;
 
 	private bool oneShot; //one opporinity
@@ -17,9 +18,12 @@ public class VictoryChecker : MonoBehaviour {
 
 	public AudioSource[] musics;
 
+
+	private int Level;
 	// Use this for initialization
 	void Start () {
 		timerscript = GameObject.Find("Timer").GetComponent<Timer>();
+		Level = Camera.main.GetComponent<DifficultySelector> ().getDifficulty();
 	}
 	
 	// Update is called once per frame
@@ -37,6 +41,7 @@ public class VictoryChecker : MonoBehaviour {
 			if(!musics[0].isPlaying&&!oneShot){
 				musics[0].Play();
 				oneShot = true;
+				Level = Camera.main.GetComponent<DifficultySelector> ().getDifficulty();
 			}
 			StartCoroutine(GameOver());
 			return;
@@ -50,6 +55,10 @@ public class VictoryChecker : MonoBehaviour {
 			if(!musics[1].isPlaying&&!oneShot){
 				musics[1].Play();
 				oneShot = true;
+				Level = Camera.main.GetComponent<DifficultySelector> ().getDifficulty();
+
+				if(Level<10)
+					Level+=1;
 			}
 			StartCoroutine(GameOver());
 			return;
@@ -62,6 +71,7 @@ public class VictoryChecker : MonoBehaviour {
 			musics[2].Stop();
 			if(!musics[0].isPlaying&&!oneShot){
 				musics[0].Play();
+				Level = Camera.main.GetComponent<DifficultySelector> ().getDifficulty();
 				oneShot = true;
 			}
 			StartCoroutine(GameOver());
@@ -71,7 +81,9 @@ public class VictoryChecker : MonoBehaviour {
 
 	IEnumerator GameOver(){
 		yield return new WaitForSeconds(2.0f);
+		PlayerPrefs.SetInt ("CTPDiff", Level);
 		Communicator.finished = true;
+		Application.LoadLevel (Application.loadedLevelName);
 	}
 
 }

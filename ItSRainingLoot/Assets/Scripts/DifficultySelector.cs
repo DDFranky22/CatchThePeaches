@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class DifficultySelector : MonoBehaviour {
 
 	public bool begin;
-	public GUIText countdown;
+	public Text countdown;
 
 	public GUISkin skin;
 	public IndieQuiltCommunicator communicator;
@@ -29,9 +30,12 @@ public class DifficultySelector : MonoBehaviour {
 	public float YSStart;
 	public float XDStart;
 	public float YDStart;
+	public float fontDim;
 	// Use this for initialization
 	void Start () {
-		difficulty = communicator.difficulty;
+		difficulty = PlayerPrefs.GetInt("CTPDiff");
+		if (difficulty == null)
+			difficulty = 0;
 		if(difficulty==0){
 			difficulty = 1;
 			activeLevel = Levels[difficulty-1];
@@ -76,6 +80,7 @@ public class DifficultySelector : MonoBehaviour {
 		//delete
 		float width = Screen.width;
 		float height = Screen.height;
+		skin.button.fontSize = (int) (width / fontDim);
 		GUI.skin = skin;
 		if(!hide){
 			if(GUI.Button(new Rect(width/XSPlus,height/YSPlus,width/XDPlus,height/YDPlus),"+")&&difficulty<10){
@@ -92,6 +97,7 @@ public class DifficultySelector : MonoBehaviour {
 			}
 			GUI.Label(new Rect(width/XSDifficulty,height/YSDifficulty,width/XDDifficulty,height/YDDifficulty),""+difficulty);
 			if(GUI.Button(new Rect(width/XSStart,height/YSStart,width/XDStart,height/YDStart),"Start Game")){
+				PlayerPrefs.SetInt ("CTPDiff", difficulty);
 				Time.timeScale = 1.0f;
 				hide = true;
 				StartCoroutine(StartCountDown());
@@ -99,4 +105,8 @@ public class DifficultySelector : MonoBehaviour {
 		}
 		//delete
 	}
+
+	public int getDifficulty(){
+				return difficulty;
+		}
 }
