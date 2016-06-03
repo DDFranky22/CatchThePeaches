@@ -1,18 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class pressRToRestart : MonoBehaviour {
+public class pressRToRestart : MonoBehaviour
+{
 
-	// Use this for initialization
-	void Start () {
+		// Use this for initialization
+		void Start ()
+		{
 	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		if(Input.GetKeyDown(KeyCode.R)){
-			Application.LoadLevel(Application.loadedLevelName);
 		}
 	
-	}
+		// Update is called once per frame
+		void Update ()
+		{
+				if (Input.GetKeyDown (KeyCode.R)) {
+						Application.LoadLevel (Application.loadedLevelName);
+				}
+	
+		}
 }
