@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class pressRToRestart : MonoBehaviour
+public class LevelProperties : MonoBehaviour
 {
+
+    public int requiredPeaches;
 
     // Use this for initialization
     void Start()
@@ -13,10 +15,6 @@ public class pressRToRestart : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            Application.LoadLevel(Application.loadedLevelName);
-        }
 
     }
 }

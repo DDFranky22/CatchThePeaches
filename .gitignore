@@ -1,0 +1,14 @@
+*.bin
+*.log
+*.info
+*.dll
+ItSRainingLoot\Build.rar
+*.mdb
+*.aspx
+*.config
+*.rar
+*.exe
+ItSRainingLoot/Build/catch_Data/mainData
+ItSRainingLoot/Build/catch_Data/Mono/etc/mono/config
+*.xml
+*.ini
