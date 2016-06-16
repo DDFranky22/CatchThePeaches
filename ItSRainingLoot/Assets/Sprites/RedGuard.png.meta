@@ -1,0 +1,112 @@
+fileFormatVersion: 2
+guid: 267e8cf040ba6bd41a7f906825dc3202
+timeCreated: 1466102934
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: RedGuard_0
+    21300002: RedGuard_1
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: RedGuard_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 242
+        height: 278
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 65, y: 17}
+        - {x: 90, y: 81}
+        - {x: 44, y: 139}
+        - {x: -43, y: 139}
+        - {x: -79, y: 111}
+        - {x: -81, y: 8}
+        - {x: -57, y: -29}
+        - {x: -121, y: -37}
+        - {x: -121, y: -73}
+        - {x: -95, y: -116}
+        - {x: -62, y: -139}
+        - {x: 65, y: -139}
+        - {x: 100, y: -138}
+        - {x: 121, y: -71}
+        - {x: 121, y: -19}
+        - {x: 50, y: -25}
+    - name: RedGuard_1
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 5
+        width: 242
+        height: 281
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 65, y: 23.5}
+        - {x: 78, y: 88.5}
+        - {x: 69, y: 121.5}
+        - {x: 24, y: 140.5}
+        - {x: -46, y: 140.5}
+        - {x: -85, y: 115.5}
+        - {x: -73, y: 1.5}
+        - {x: -50, y: -34.5}
+        - {x: -121, y: -38.5}
+        - {x: -121, y: -81.5}
+        - {x: -77, y: -140.5}
+        - {x: 104, y: -140.5}
+        - {x: 121, y: -71.5}
+        - {x: 121, y: -25.5}
+        - {x: 49, y: -26.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
