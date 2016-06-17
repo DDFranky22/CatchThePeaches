@@ -89,13 +89,15 @@ public class DifficultySelector : MonoBehaviour
         countdown.text = "";
         if (PlayerPrefs.GetInt("CTPInstGiv") == 0)
         {
-            countdown.text = "Take ALL 5 peaches";
+            countdown.text = "Take ALL the peaches";
             yield return new WaitForSeconds(2.0f);
-            countdown.text = "30 seconds";
+            countdown.text = "in 30 seconds";
             yield return new WaitForSeconds(2.0f);
             countdown.text = "Do NOT get caught";
             yield return new WaitForSeconds(2.0f);
             countdown.text = "Run & Walljump";
+            yield return new WaitForSeconds(2.0f);
+            countdown.text = "Good luck";
             PlayerPrefs.SetInt("CTPInstGiv", 1);
             yield return new WaitForSeconds(1.0f);
         }

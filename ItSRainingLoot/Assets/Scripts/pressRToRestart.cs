@@ -17,6 +17,11 @@ public class pressRToRestart : MonoBehaviour
         {
             Application.LoadLevel(Application.loadedLevelName);
         }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            PlayerPrefs.DeleteAll();
+            Application.LoadLevel(Application.loadedLevelName);
+        }
 
     }
 }
